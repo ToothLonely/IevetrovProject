@@ -1,7 +1,6 @@
 package org.example.lesson_2
 
 fun main() {
-    //Объявление и инициализация переменных
     val studentMark1: Byte = 3
     val studentMark2: Byte = 4
     val studentMark3: Byte = 3
@@ -11,6 +10,5 @@ fun main() {
     //Вычисление среднего балла
     val avgRating: Float = (studentMark1 + studentMark2 + studentMark3 + studentMark4) / numberOfStudents
 
-    //Вывод в консоль в нужном формате
     println(String.format("%.2f", avgRating))
 }
