@@ -1,6 +1,7 @@
 package org.example.lesson_3
 
 fun main() {
+
     val name: String = "Иван"
     val evening: String = "Добрый вечер"
     val morning: String = "Доброе утро"
