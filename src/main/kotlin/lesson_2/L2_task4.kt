@@ -1,7 +1,8 @@
 package org.example.lesson_2
 
+const val FULl_PERCENT = 100
+
 fun main() {
-    //Что-то мне подсказывает, что я не правильно понял задание :(
     val crystal: Byte = 7
     val iron: Byte = 11
     val buff: Byte = 20
@@ -9,8 +10,8 @@ fun main() {
     val crystalBuff: Byte
 
     //Вычисляю бафф на железо и кристалл
-    ironBuff = (iron * buff / 100).toByte()
-    crystalBuff = (crystal * buff / 100).toByte()
+    ironBuff = (iron * buff / FULl_PERCENT).toByte()
+    crystalBuff = (crystal * buff / FULl_PERCENT).toByte()
 
     println("Кристаллический бафф: $crystalBuff")
     println("Железный бафф: $ironBuff")
