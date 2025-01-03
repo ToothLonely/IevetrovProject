@@ -12,7 +12,7 @@ fun main() {
 
     //Проверка базового сценария условий
     var isBasicFavorableConditions: Boolean =
-        !isDamage && (countPassengers >= MINIMUM_PASSENGERS && countPassengers <= MAXIMUM_PASSENGERS)
+        !isDamage && (countPassengers in MINIMUM_PASSENGERS .. MAXIMUM_PASSENGERS)
                 && (countProvision > MINIMUM_PROVISION) && isGoodWeather
 
     //Проверка альтернативного сценария условий
