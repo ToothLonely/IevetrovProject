@@ -1,6 +1,7 @@
 package org.example.lesson_5
 
 fun main() {
+    //Создание выигрышных чисел. Будем считать, что они уникальны
     val firstNumber: Byte = (0..42).random().toByte()
     val secondNumber: Byte = (0..42).random().toByte()
 
@@ -11,19 +12,19 @@ fun main() {
 
     println("Необходимо было ввести: $firstNumber и $secondNumber")
 
-    //Проверка введенных чисел с целевыми
+    //Проверка введенных чисел с загаданными.
+    //Добавил проверку на совпадение введенных чисел,
+    //чтобы не выводило полный выигрыш, если два введенных числа равны только одному из загаданных чисел
     if (firstInputNumber == firstNumber || firstInputNumber == secondNumber) {
-        when ((secondInputNumber != firstInputNumber) &&//Добавил проверку на совпадение введеных чисел,
-                //чтобы не выводило полный выигрыш, если два введеных числа равны только одному из целевых чисел
-                //P.S. я не знаю можно ли писать комменты, обрывая код... надеюсь, что можно :)
+        when ((secondInputNumber != firstInputNumber) &&
                 (secondInputNumber == secondNumber || secondInputNumber == firstNumber)) {
             true -> println("Поздравляем! Вы выиграли главный приз!")
             false -> println("Вы выиграли утешительный приз!")
         }
+    } else if (secondInputNumber == firstNumber || secondInputNumber == secondNumber) {
+        println("Вы выиграли утешительный приз!")
     } else {
         println("Неудача!")
     }
-    //Этот код не учитывает ситуации, когда надо отгадать два одинаковых числа, например загадано 1 и 1,
-    //(потому что это сильно усложнит код и сомневаюсь, что в лотереях такое случается)
 
 }
