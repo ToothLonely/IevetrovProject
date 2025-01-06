@@ -12,5 +12,5 @@ fun main() {
     numberOfAdViews.forEach {
         print("$it ")
     }
-    println("\nСуммарное количество просмотров за неделю: ${numberOfAdViews.sum()}")
+    println("\nСуммарное количество просмотров за неделю: ${numberOfAdViews.sum()} ")
 }
