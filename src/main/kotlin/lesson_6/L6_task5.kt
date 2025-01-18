@@ -15,7 +15,6 @@ fun main() {
         print("Подтвердите, что вы не робот. Вычислите сумму $firstTerm и $secondTerm: ")
         inputResult = readln().toInt()
 
-        //Проверка правильности решения
         if (inputResult == firstTerm + secondTerm) {
             incorrectResult = false
             println("Добро пожаловать!")
