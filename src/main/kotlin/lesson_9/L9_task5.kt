@@ -15,7 +15,6 @@ fun main() {
         }
     }
 
-    // Вывод списка в консоль
     println("Ваш список ингредиентов: ")
     print(ingredients.sorted().joinToString(", ") {
         if (it == ingredients.sorted().first()) {
