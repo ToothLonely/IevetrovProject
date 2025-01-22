@@ -7,8 +7,6 @@ fun main() {
     for (i in time downTo 1) {
         println("До конца осталось $i")
         Thread.sleep(1000)
-        if (i == 1) {
-            println("Время вышло")
-        }
     }
+    println("Время вышло")
 }
