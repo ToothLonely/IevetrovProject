@@ -17,7 +17,5 @@ fun main() {
         ingredients.forEach { ingredient: String ->
             print("$ingredient ")
         }
-    } else {
-        return
     }
 }
