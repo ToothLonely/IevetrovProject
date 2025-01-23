@@ -1,17 +1,21 @@
 package org.example.lesson_9
 
 fun main() {
-    val numberOfIngredients: List<Int> = listOf(2, 50, 15)
+    val numberOfIngredientsPerServing: List<Int> = listOf(2, 50, 15)
 
     print("Сколько порций необходимо приготовить? ")
     val numberOfServings: Int = readln().toInt()
 
     print("На $numberOfServings порций вам понадобится: ")
-    for (i in 0 until numberOfIngredients.size) {
+    val numberOfAllIngredients = numberOfIngredientsPerServing.map {
+        it * numberOfServings
+    }
+
+    for (i in 0 until numberOfAllIngredients.size) {
         when (i) {
-            0 -> print("Яиц - ${numberOfIngredients[i] * numberOfServings} шт, ")
-            1 -> print("молока - ${numberOfIngredients[i] * numberOfServings} мл, ")
-            2 -> print("сливочного масла - ${numberOfIngredients[i] * numberOfServings} гр ")
+            0 -> print("Яиц - ${numberOfAllIngredients[i]} шт, ")
+            1 -> print("молока - ${numberOfAllIngredients[i]} мл, ")
+            2 -> print("сливочного масла - ${numberOfAllIngredients[i]} гр ")
         }
     }
 }
