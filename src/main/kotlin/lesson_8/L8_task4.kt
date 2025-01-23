@@ -7,13 +7,14 @@ fun main() {
 
     println("\nКакой ингредиент хотите заменить? ")
     val substituteIngredient: String = readln()
+    val indexOfSubstituteIngredient = ingredients.indexOf(substituteIngredient)
 
-    if (substituteIngredient !in ingredients) {
+    if (indexOfSubstituteIngredient == -1) {
         println("Нет такого ингредиента")
+        return
     } else {
         print("Введите новый ингредиент: ")
         val newIngredient: String = readln()
-        val indexOfSubstituteIngredient: Int = ingredients.indexOf(substituteIngredient)//Индекс выбранного ингредиента
         ingredients[indexOfSubstituteIngredient] = newIngredient
 
         print("Готово! Вы сохранили следующий список: ")
