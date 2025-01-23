@@ -1,12 +1,14 @@
 package org.example.lesson_7
 
+const val MINIMUM_PASSWORD_LENGTH = 6
+
 fun main() {
     var passwordLength: Int
     print("Введите длину пароля (Минимум 6): ")
     passwordLength = readln().toInt()
 
     //Проверяю, чтобы длина пароля была не менее 6 символов
-    while (passwordLength < 6) {
+    while (passwordLength < MINIMUM_PASSWORD_LENGTH) {
         print("Неверный ввод, попробуйте еще раз: ")
         passwordLength = readln().toInt()
     }
@@ -26,8 +28,6 @@ fun main() {
     var newSymbolToPassword: Char //В этой переменной будет храниться значение нового сгенерированного символа
     var passwordIterator: Int = 0
 
-    //Не получается реализовать через for,
-    //т.к неизвестно когда программа сгенерирует правильную комбинацию символов
     while (passwordIterator < passwordLength) {
 
         newSymbolToPassword = passwordAlphabet.random()
@@ -57,5 +57,7 @@ fun main() {
             password = ""
         }
     }
-    println("Ваш пароль: $password")
+
+    val shuffledPassword = password.toList().shuffled().joinToString("")
+    println("Ваш пароль: $shuffledPassword")
 }
