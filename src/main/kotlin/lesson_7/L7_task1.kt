@@ -1,12 +1,14 @@
 package org.example.lesson_7
 
 fun main() {
+    val numberRange: IntRange = (0..9)
+    val charRange: CharRange = ('a'..'z')
     var password = ""
     for (i in 0..5) {
         if (i % 2 == 0) {
-            password += (0..9).random()
+            password += numberRange.random()
         } else {
-            password += ('a'..'z').random()
+            password += charRange.random()
         }
     }
     println(password)
