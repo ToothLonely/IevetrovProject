@@ -10,11 +10,6 @@ fun main() {
         ingredients[i] = readln()
     }
 
-    for (i in 0 until numberOfIngredients) {
-        if (i == ingredients.indexOf(ingredients.last())) {
-            print("${ingredients[i]} ")
-        } else {
-            print("${ingredients[i]}, ")
-        }
-    }
+    val ingredientsSeparatedByCommas = ingredients.joinToString(", ")
+    println(ingredientsSeparatedByCommas)
 }
