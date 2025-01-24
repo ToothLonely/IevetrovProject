@@ -11,5 +11,5 @@ fun main() {
         }
     } while (ingredients.size != 5)
 
-    println("${ingredients.sorted()}")
+    print("${ingredients.sorted()}")
 }
