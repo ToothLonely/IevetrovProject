@@ -5,17 +5,14 @@ const val TENT: String = "open"
 const val AIR_HUMIDITY: Byte = 20
 const val NOT_SEASON: String = "winter"
 
-fun main(){
-    var currentWeather: String = "sunny"
-    var currentTent: String = "open"
-    var currentAirHumidity: Byte = 20
-    var currentSeason: String = "winter"
+fun main() {
+    val currentWeather = "sunny"
+    val currentTent = "open"
+    val currentAirHumidity: Byte = 20
+    val currentSeason = "winter"
 
-    var isWeatherSunny: Boolean = currentWeather == WEATHER
-    var isTentOpen: Boolean = currentTent == TENT
-    var isAirHumidity20: Boolean = currentAirHumidity == AIR_HUMIDITY
-    var isSeasonNotWinter:  Boolean = currentSeason != NOT_SEASON
-    var isFavorableConditions: Boolean = isSeasonNotWinter && isTentOpen && isAirHumidity20 && isWeatherSunny
+    val isFavorableConditions: Boolean = (currentSeason != NOT_SEASON) && (currentTent == TENT) &&
+            (currentAirHumidity == AIR_HUMIDITY) && (currentWeather == WEATHER)
 
     println("Благоприятные ли условия сейчас для роста бобовых? $isFavorableConditions")
 }
