@@ -5,11 +5,9 @@ fun main() {
     val evening: String = "Добрый вечер"
     val morning: String = "Доброе утро"
 
-    //Утреннее приветствие
     var greeting: String = morning + ',' + name + '!'
     println(greeting)
 
-    //Вечернее приветсвие
     greeting = "$evening, $name!"
     println(greeting)
 }
