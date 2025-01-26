@@ -2,17 +2,7 @@ fun rollTheDice(): Int {
     return (1..6).random()
 }
 
-fun playRound(humanMove: Int, robotMove: Int): String {
-    print("Ход человека: ")
-    Thread.sleep(2000)
-    println(humanMove)
-    Thread.sleep(1000)
-
-    print("Ход машины: ")
-    Thread.sleep(2000)
-    println(robotMove)
-    Thread.sleep(1000)
-
+fun determineTheWinner(humanMove: Int, robotMove: Int): String {
     if (humanMove > robotMove) {
         println("Победило человечество")
         return "Human"
@@ -25,7 +15,22 @@ fun playRound(humanMove: Int, robotMove: Int): String {
     }
 }
 
+fun move(player: String, moveResult: Int) {
+    print("$player делает ход: ")
+    Thread.sleep(2000)
+    println(moveResult)
+    Thread.sleep(1000)
+}
+
+fun playRound(humanMove: Int, humanName: String, robotMove: Int, robotName: String): String {
+    move(humanName, humanMove)
+    move(robotName, robotMove)
+    return determineTheWinner(humanMove, robotMove)
+}
+
 fun main() {
+    val humanName = "Человек"
+    val robotName = "Машина"
     var humanMove: Int
     var robotMove: Int
     var humanWinsCounter: Int = 0
@@ -37,7 +42,7 @@ fun main() {
         println("Раунд ${++moveCounter}")
         humanMove = rollTheDice()
         robotMove = rollTheDice()
-        when (playRound(humanMove, robotMove)) {
+        when (playRound(humanMove, humanName, robotMove, robotName)) {
             "Human" -> humanWinsCounter++
             "Robot" -> robotWinsCounter++
             "Draw" -> drawCounter++
