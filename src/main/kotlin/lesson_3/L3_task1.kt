@@ -7,7 +7,6 @@ fun main() {
 
     var greeting: String = morning + ',' + name + '!'
     println(greeting)
-
     greeting = "$evening, $name!"
     println(greeting)
 }
