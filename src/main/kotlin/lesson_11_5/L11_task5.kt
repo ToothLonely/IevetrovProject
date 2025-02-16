@@ -84,18 +84,18 @@ class MessageBuilder {
 fun main() {
     val forum = Forum()
 
-    val user1 = forum.createNewUser("Иван")
-    val user2 = forum.createNewUser("Никита")
-    val user3 = forum.createNewUser("Виктор")
-    val user4 = forum.createNewUser("Махмуд")
+    forum.createNewUser("Иван")
+    forum.createNewUser("Никита")
+    forum.createNewUser("Виктор")
+    forum.createNewUser("Махмуд")
 
-    val message1 = forum.createNewMessage(1, "Привет")
-    val message2 = forum.createNewMessage(2, "Привет")
-    val message3 = forum.createNewMessage(3, "Привет")
-    val message4 = forum.createNewMessage(1, "Как дела?")
-    val message5 = forum.createNewMessage(3, "Нормально,а у тебя?")
-    val message6 = forum.createNewMessage(1, "У меня тоже")
-    val message7 = forum.createNewMessage(4, "А у меня все плохо")
+    forum.createNewMessage(1, "Привет")
+    forum.createNewMessage(2, "Привет")
+    forum.createNewMessage(3, "Привет")
+    forum.createNewMessage(1, "Как дела?")
+    forum.createNewMessage(3, "Нормально,а у тебя?")
+    forum.createNewMessage(1, "У меня тоже")
+    forum.createNewMessage(4, "А у меня все плохо")
 
     forum.printThread()
 }
