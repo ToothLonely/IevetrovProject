@@ -1,4 +1,4 @@
-package org.example.lesson_11_4
+package org.example.lesson_11
 
 class RecipeCategory(
     val listOfRecipes: List<Recipe>,

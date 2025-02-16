@@ -1,4 +1,4 @@
-package org.example.lesson_11.lesson_11_3
+package org.example.lesson_11
 
 class Room(
     val roomName: String,
