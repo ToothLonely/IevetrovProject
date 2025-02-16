@@ -11,10 +11,7 @@ class User2(
         println("id = $id, login = $login, password = $password, mail = $mail, bio = $bio")
     }
 
-    fun setBio() {
-        println("Расскажите о себе: ")
-        bio = readln()
-    }
+    fun setBio(bio: String) = apply { this.bio = bio }
 
     fun setPassword() {
         println("Подтвердите пароль: ")
@@ -29,8 +26,9 @@ class User2(
 
 fun main() {
     val Ivan = User2(3, "Ivan", "qwerty", "Ivan@mail.ru")
+    val bio = "Меня зовут Иван и мой старый пароль qwerty"
 
-    Ivan.setBio()
+    Ivan.setBio(bio)
     Ivan.setPassword()
     Ivan.printProperties()
 }
