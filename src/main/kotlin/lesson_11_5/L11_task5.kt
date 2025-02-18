@@ -5,26 +5,54 @@ class Forum {
     val listOfMembers: MutableList<Member> = mutableListOf()
     val listOfMessages: MutableList<Message> = mutableListOf()
 
-    fun createNewUser(userName: String): Member {
-        val newMember = MemberBuilder()
-            .increaseUserId()
-            .setUserName(userName)
-            .build()
+    var authorId: Int = 0
+    var message: String = ""
+    var userId: Int = 0
+    var userName: String = ""
+
+    fun setUserId(newId: Int): Int {
+        userId = newId
+        return userId
+    }
+
+    fun setUserName(newUserName: String): String {
+        userName = newUserName
+        return userName
+    }
+
+    fun buildMember(id: Int, userName: String): Member {
+        return Member(setUserId(id), setUserName(userName))
+    }
+
+    fun createNewUser(id: Int, userName: String): Member {
+
+        val newMember = Forum().buildMember(id, userName)
 
         listOfMembers.add(newMember)
 
         return newMember
     }
 
-    fun createNewMessage(authorId: Int, payload: String): Message? {
-        if (authorId > listOfMembers.size) {
+    fun setAuthorId(newAuthorId: Int): Int {
+        authorId = newAuthorId
+        return authorId
+    }
+
+    fun setMessage(newMessage: String): String {
+        message = newMessage
+        return message
+    }
+
+    fun buildMessage(Id: Int, payload: String): Message {
+        return Message(setAuthorId(Id), setMessage(payload))
+    }
+
+    fun createNewMessage(id: Int, payload: String): Message? {
+        if (id > listOfMembers.size) {
             println("Нет такого пользователя!")
             return null
         } else {
-            val newMessage = MessageBuilder()
-                .setAuthorId(authorId)
-                .setMessage(payload)
-                .build()
+            val newMessage = Forum().buildMessage(id, payload)
 
             listOfMessages.add(newMessage)
 
@@ -53,41 +81,13 @@ data class Message(
     val message: String,
 )
 
-var userId: Int = 0 //Пришлось создать глобальную переменную,
-// чтобы можно было увеличивать Id пользователя при его создании
-
-class MemberBuilder {
-    var userName: String = ""
-
-    fun increaseUserId() = apply { userId++ }
-
-    fun setUserName(newUserName: String) = apply { this.userName = newUserName }
-
-    fun build(): Member {
-        return Member(userId, userName)
-    }
-}
-
-class MessageBuilder {
-    var authorId: Int = 0
-    var message: String = ""
-
-    fun setAuthorId(newAuthorId: Int) = apply { this.authorId = newAuthorId }
-
-    fun setMessage(newMessage: String) = apply { this.message = newMessage }
-
-    fun build(): Message {
-        return Message(authorId, message)
-    }
-}
-
 fun main() {
     val forum = Forum()
 
-    forum.createNewUser("Иван")
-    forum.createNewUser("Никита")
-    forum.createNewUser("Виктор")
-    forum.createNewUser("Махмуд")
+    forum.createNewUser(1, "Иван")
+    forum.createNewUser(2, "Никита")
+    forum.createNewUser(3, "Виктор")
+    forum.createNewUser(4, "Махмуд")
 
     forum.createNewMessage(1, "Привет")
     forum.createNewMessage(2, "Привет")
