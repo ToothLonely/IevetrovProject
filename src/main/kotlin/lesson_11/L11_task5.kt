@@ -1,4 +1,4 @@
-package org.example.lesson_11_5
+package org.example.lesson_11
 
 class Forum {
 
