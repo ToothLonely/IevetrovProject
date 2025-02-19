@@ -1,13 +1,15 @@
 package org.example.lesson_12
 
+const val DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN = 273
+
 class WeatherData(
     dayTemperatureInKelvin: Int,
     nightTemperatureInKelvin: Int,
     _isPrecipitation: Boolean
 ) {
 
-    var dayTemperatureInCelsius = dayTemperatureInKelvin - 273
-    var nightTemperatureInCelsius = nightTemperatureInKelvin - 273
+    var dayTemperatureInCelsius = dayTemperatureInKelvin - DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN
+    var nightTemperatureInCelsius = nightTemperatureInKelvin - DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN
     var isPrecipitation = _isPrecipitation
 
     fun printIndicators() {
