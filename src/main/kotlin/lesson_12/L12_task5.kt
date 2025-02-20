@@ -10,30 +10,9 @@ class WeatherPrediction(
     nightTemperatureInKelvin: Int,
     _isPrecipitation: Boolean,
 ) {
-
     val dayTemperatureInCelsius = dayTemperatureInKelvin - DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN
     val nightTemperatureInCelsius = nightTemperatureInKelvin - DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN
     val isPrecipitation = _isPrecipitation
-
-}
-
-fun printAverageDayTimeTemperature(listOfTemperatureMeasurements: MutableList<WeatherPrediction>) {
-    val dayTimeData = listOfTemperatureMeasurements.map { it.dayTemperatureInCelsius }
-    val averageDayTimeTemperature = dayTimeData.average()
-    println("Среднее значение температуры днем: ${averageDayTimeTemperature.roundToInt()}")
-}
-
-fun printAverageNightTimeTemperature(listOfTemperatureMeasurements: MutableList<WeatherPrediction>) {
-    val nightTimeData = listOfTemperatureMeasurements.map { it.nightTemperatureInCelsius }
-    val averageNightTimeTemperature = nightTimeData.average()
-    println("Среднее значение температуры ночью: ${averageNightTimeTemperature.roundToInt()}")
-}
-
-fun printDaysWithPrecipitation(listOfTemperatureMeasurements: MutableList<WeatherPrediction>) {
-    val numberOfDaysWithPrecipitation = listOfTemperatureMeasurements.count {
-        it.isPrecipitation
-    }
-    println("Количество дней с осадками: $numberOfDaysWithPrecipitation")
 }
 
 fun main() {
@@ -55,8 +34,11 @@ fun main() {
         )
     }
 
-    printAverageDayTimeTemperature(listOfTemperatureMeasurements)
-    printAverageNightTimeTemperature(listOfTemperatureMeasurements)
-    printDaysWithPrecipitation(listOfTemperatureMeasurements)
+    val averageDayTimeTemperature = listOfTemperatureMeasurements.map { it.dayTemperatureInCelsius }.average()
+    val averageNightTimeTemperature = listOfTemperatureMeasurements.map { it.nightTemperatureInCelsius }.average()
+    val numberOfDaysWithPrecipitation = listOfTemperatureMeasurements.count { it.isPrecipitation }
 
+    println("Средняя температура днем: ${averageDayTimeTemperature.roundToInt()}")
+    println("Средняя температура ночью: ${averageNightTimeTemperature.roundToInt()}")
+    println("Количество дней с осадками: $numberOfDaysWithPrecipitation")
 }
