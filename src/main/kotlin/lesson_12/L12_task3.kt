@@ -8,9 +8,9 @@ class WeatherData(
     _isPrecipitation: Boolean
 ) {
 
-    var dayTemperatureInCelsius = dayTemperatureInKelvin - DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN
-    var nightTemperatureInCelsius = nightTemperatureInKelvin - DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN
-    var isPrecipitation = _isPrecipitation
+    val dayTemperatureInCelsius = dayTemperatureInKelvin - DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN
+    val nightTemperatureInCelsius = nightTemperatureInKelvin - DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN
+    val isPrecipitation = _isPrecipitation
 
     fun printIndicators() {
         println("Температура днем: ${dayTemperatureInCelsius} ")
