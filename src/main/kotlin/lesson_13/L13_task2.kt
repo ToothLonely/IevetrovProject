@@ -3,13 +3,13 @@ package org.example.lesson_13
 class Person(
     val name: String,
     val phoneNumber: Long,
-    val company: String? = null ?: "<не указано>",
+    val company: String? = null,
 ) {
     fun printInfo() {
         println(
             "Имя: $name \n" +
             "Номер телефона: $phoneNumber \n" +
-            "Компания: $company"
+            "Компания: ${company ?: "<не указано>"}"
         )
     }
 }
