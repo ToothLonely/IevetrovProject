@@ -1,8 +1,8 @@
 package org.example.lesson_12
 
-const val DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN = 273
+//const val DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN = 273
 
-class WeatherPrediction(
+class WeatherPredictions(
     dayTemperatureInKelvin: Int = 0,
     nightTemperatureInKelvin: Int = 0,
     _isPrecipitation: Boolean = false,
@@ -20,5 +20,5 @@ class WeatherPrediction(
 }
 
 fun main() {
-    val day1 = WeatherPrediction(300, 273, true)
+    val day1 = WeatherPredictions(300, 273, true)
 }

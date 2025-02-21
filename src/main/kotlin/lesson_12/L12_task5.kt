@@ -3,7 +3,7 @@ package org.example.lesson_12
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
-const val DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN = 273
+//const val DIFFERENCE_BETWEEN_CELSIUS_AND_KELVIN = 273
 
 class WeatherPrediction(
     dayTemperatureInKelvin: Int,
