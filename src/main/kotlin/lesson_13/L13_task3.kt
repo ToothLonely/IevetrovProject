@@ -3,7 +3,7 @@ package org.example.lesson_13
 class Human(
     val name: String,
     val phoneNumber: Long,
-    val company: String? = null ?: "<не указано>",
+    val company: String? = null,
 )
 
 fun main() {
@@ -16,10 +16,8 @@ fun main() {
         Human("Митрофан", 8_930_030_03_00, "Трактористы")
     )
 
-    listOfHumans.map { it.company }.distinct().forEach {
-        if (it != null && it != "<не указано>") {
-            println(it)
-        }
+    listOfHumans.mapNotNull { it.company }.distinct().forEach {
+        println(it)
     }
 
 }
