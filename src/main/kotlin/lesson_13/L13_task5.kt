@@ -7,13 +7,12 @@ class ContactInfo(
 ) {
     fun setPhoneNumber(): Long? {
 
-        val _phoneNumber = try {
+        phoneNumber = try {
             readln().toLong()
         } catch (e: NumberFormatException) {
-            println("Произошла ошибка: ${e::class.simpleName}"); null
+            println("Произошла ошибка: ${e::class.simpleName}"); 0
         }
 
-        phoneNumber = _phoneNumber
         return phoneNumber
     }
 }
