@@ -40,7 +40,7 @@ class Chat {
             }
             if (i.key in groupedChildMessages.keys) {
                 groupedChildMessages[i.key]?.forEach {
-                    println("    ${it.author}: ${it.payload}")
+                    println("\t${it.author}: ${it.payload}")
                     it.printFlag = false //После печати тредового сообщения ставлю флаг на false,
                     // чтобы потом не печатать это сообщение как обычное
                 }
