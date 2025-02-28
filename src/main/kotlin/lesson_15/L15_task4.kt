@@ -1,6 +1,6 @@
 package org.example.lesson_15
 
-interface Searchable {
+interface ComponentContainer {
     val listOfComponents: MutableList<Component>
 
     fun addComponent(component: Component): MutableList<Component> {
@@ -9,14 +9,6 @@ interface Searchable {
         return listOfComponents
     }
 
-    fun searchComponent(component: Component) {
-        print("Выполняется поиск: ")
-        if (component in listOfComponents) {
-            println("Компонент ${component.name} найдем")
-        } else {
-            println("Компонент ${component.name} не найден")
-        }
-    }
 }
 
 abstract class Product(
@@ -31,8 +23,17 @@ class MusicalInstrument(
     name: String,
     price: Double,
     amount: Int
-) : Product(name, price, amount), Searchable {
+) : Product(name, price, amount), ComponentContainer {
     override val listOfComponents: MutableList<Component> = mutableListOf()
+
+    fun searchComponent(component: Component) {
+        print("Выполняется поиск: ")
+        if (component in listOfComponents) {
+            println("Компонент ${component.name} найдем")
+        } else {
+            println("Компонент ${component.name} не найден")
+        }
+    }
 }
 
 fun main() {
