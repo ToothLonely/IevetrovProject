@@ -7,6 +7,10 @@ abstract class User(
     fun sendMessage(message: String) {
         println("Пользователь с ID = $id и ником $name отправил сообщение: $message")
     }
+
+    fun readForum() {
+        println("Пользователь $name начал читать файл")
+    }
 }
 
 class Member(id: Int, name: String) : User(id, name)
@@ -28,6 +32,7 @@ fun main() {
     val admin2 = Admin(2, "admin2")
 
     user1.sendMessage("Привет, я user1")
+    user2.readForum()
     user2.sendMessage("Привет, я user2")
 
     admin1.sendMessage("Привет, я admin1")
