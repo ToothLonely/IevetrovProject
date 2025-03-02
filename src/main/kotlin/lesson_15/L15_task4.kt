@@ -27,11 +27,11 @@ class MusicalInstrument(
 
     override fun searchComponent(component: Component) {
         print("Выполняется поиск: ")
-        if (component in listOfComponents) {
-            println("Компонент ${component.name} найдем")
-        } else {
-            println("Компонент ${component.name} не найден")
-        }
+        val isFound = component.takeIf { it in listOfComponents }?.let {
+            "найден"
+        } ?: "не найден"
+        println("Компонент ${component.name} $isFound")
+
     }
 }
 
