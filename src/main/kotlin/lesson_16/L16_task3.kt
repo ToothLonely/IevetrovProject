@@ -4,20 +4,15 @@ class Person {
     private val password = "qwerty"
     private val login = "abc"
 
-    fun getPassword(): String {
-        return password
-    }
+    fun checkPassword(inputPassword: String) = (inputPassword == password)
 }
-
-fun checkPassword(password: String, inputPassword: String) = (inputPassword == password)
 
 fun main() {
     val person = Person()
     print("Введите пароль: ")
     val inputPassword = readln()
-    val password = person.getPassword()
 
-    val isCorrect = when (checkPassword(password, inputPassword)) {
+    val isCorrect = when (person.checkPassword(inputPassword)) {
         true -> println("Пароль верный")
         false -> println("Пароль не верный")
     }
