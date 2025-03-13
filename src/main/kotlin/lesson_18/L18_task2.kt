@@ -1,7 +1,8 @@
 package org.example.lesson_18
 
-open class Dice(sides: Int) {
+abstract class Dice {
 
+    protected abstract val sides: Int
     private val resultsRange = 1..sides
 
     private fun rollTheDice(): Int {
@@ -14,9 +15,20 @@ open class Dice(sides: Int) {
     }
 }
 
-class FourSidesDice() : Dice(4)
-class SixSidesDice() : Dice(6)
-class EightSidesDice() : Dice(8)
+class FourSidesDice : Dice() {
+    override val sides: Int
+        get() = 4
+}
+
+class SixSidesDice : Dice() {
+    override val sides: Int
+        get() = 6
+}
+
+class EightSidesDice : Dice() {
+    override val sides: Int
+        get() = 8
+}
 
 fun main() {
     val dice4 = FourSidesDice()
