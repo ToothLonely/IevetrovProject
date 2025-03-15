@@ -19,7 +19,7 @@ class CardIndex {
     }
 
     fun printListOfHumans() {
-        println(listOfPeople.map { "${it.name} (${it.sex.nameOfSex})" }.joinToString(", "))
+        println(listOfPeople.joinToString(", ") { "${it.name} (${it.sex.nameOfSex})" })
     }
 }
 
