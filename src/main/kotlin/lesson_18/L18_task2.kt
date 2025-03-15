@@ -3,11 +3,10 @@ package org.example.lesson_18
 abstract class Dice {
 
     protected abstract val sides: Int
-    private val resultsRange = 1..sides
 
     private fun rollTheDice(): Int {
         println("Бросок...")
-        return resultsRange.random()
+        return (1..sides).random()
     }
 
     fun printResult() {
@@ -16,18 +15,15 @@ abstract class Dice {
 }
 
 class FourSidesDice : Dice() {
-    override val sides: Int
-        get() = 4
+    override val sides = 4
 }
 
 class SixSidesDice : Dice() {
-    override val sides: Int
-        get() = 6
+    override val sides = 6
 }
 
 class EightSidesDice : Dice() {
-    override val sides: Int
-        get() = 8
+    override val sides = 8
 }
 
 fun main() {
