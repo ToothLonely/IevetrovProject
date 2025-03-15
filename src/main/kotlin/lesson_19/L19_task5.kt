@@ -7,7 +7,7 @@ enum class Sex(val nameOfSex: String?) {
 
 data class Human(
     val name: String,
-    val sex: Sex?
+    val sex: Sex
 )
 
 class CardIndex {
@@ -19,7 +19,7 @@ class CardIndex {
     }
 
     fun printListOfHumans() {
-        println(listOfPeople.map { "${it.name} (${it.sex?.nameOfSex})" }.joinToString(", "))
+        println(listOfPeople.map { "${it.name} (${it.sex.nameOfSex})" }.joinToString(", "))
     }
 }
 
